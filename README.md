@@ -4,7 +4,9 @@ read key=value configure file
 import(
 	"deepdatatop/config"
 )
+
 func main(){
+
 	file, _ := exec.LookPath(os.Args[0])
 	path, _ := filepath.Abs(file)
 	dir,filename := filepath.Split(path)
