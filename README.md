@@ -2,11 +2,11 @@
 read key=value configure file
 
 import(
-	"deepdata.top/config"
+	"deepdatatop/config"
 )
 func main(){
 	file, _ := exec.LookPath(os.Args[0])
-  path, _ := filepath.Abs(file)
+	path, _ := filepath.Abs(file)
 	dir,filename := filepath.Split(path)
 	
 	println("path:",dir)
@@ -17,7 +17,7 @@ func main(){
 	params := config.LoadConfigure(dir+"stacker.conf")
 	if params!=nil {
 		dispatcher_server = params["dispatcher"]
-		dirWorking 		  = params["workingdir"]
+		dirWorking = params["workingdir"]
 	}
 	fmt.Println( dispatcher_server,dirWorking )
 }
@@ -28,4 +28,5 @@ func main(){
 #user manual
 #
 workingdir	= /dat/crawler
-dispatcher	=	"10.100.16.20:7777"
+
+dispatcher	= "10.100.16.20:7777"
